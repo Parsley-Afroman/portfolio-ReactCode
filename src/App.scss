@@ -1,0 +1,534 @@
+@font-face {
+  font-family: 'Walk The Moon Halftone';
+  src: url("./walkthemoonhalfital.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Walk The Moon Super';
+  src: url("./walkthemoonsuperital.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Catamaran';
+  src: url("./Catamaran-VariableFont_wght.ttf") format("truetype");
+}
+
+@mixin hoverDarkBackGround {
+  &:hover {
+    color: #e1d0d6;
+  }
+}
+
+@mixin hoverLightBackground {
+  &:hover {
+    color: #9A6375;
+  }
+}
+
+@mixin hoverLiveLink {
+  &:hover {
+    color: #90DD93;
+  }
+}
+
+@mixin navlinks {
+  text-decoration: none;
+  color: white;
+  font-size: 3.5rem;
+  font-family: Walk The Moon Halftone;
+
+  @include hoverDarkBackGround;
+  }
+
+* {box-sizing: border-box}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.headerThree {
+  color: #ffffff;
+  font-family: "Walk The Moon Halftone";
+  font-size: 4rem;
+}
+
+nav {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: teal;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  .dropDownMenu {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px 0 0;
+
+    .cross {
+      font-size: 3rem;
+      color: white;
+
+      @include hoverDarkBackGround
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+
+      li {
+
+        &:nth-child(2) {
+          margin: 5px 0;
+        }
+        a {
+          @include navlinks;
+          @include hoverDarkBackGround
+
+        }
+      }
+    }
+  }
+
+  h3 {
+    margin: 20px 0;
+    font-size: 6rem;
+    font-family: Walk The Moon Super;
+    color: white;
+  }
+
+  a {
+    height: 40px;
+    width: 40px;
+    font-size: 3rem;
+    color: #ffffff;
+  }
+
+  .navLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+
+    li:nth-child(2){
+      margin: 0 30px;
+    }
+
+    li {
+
+      a {
+        @include navlinks;
+      }
+    }
+  }
+
+  .iconButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .burgerButton {
+    display: none;
+    margin: 0 0 15px 0;
+    font-size: 5rem;
+    color: #ffffff;
+
+    @include  hoverDarkBackGround;
+  }
+
+  .Hide {
+    display: none;
+  }
+}
+
+main {
+  padding: 180px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: cadetblue;
+
+  .profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    height: 100vh;
+  }
+
+  .profileImageContainer {
+    .profilePic {
+      height: 50vh;
+      border-radius: 5vw;
+      object-fit: cover;
+    }
+  }
+
+  .introContainer {
+    .aboutTextBox{
+      width: 300px;
+      .aboutMeText {
+        color: #fff;
+        font-family: Catamaran;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+
+    .socialsLinks {
+      display: flex;
+      //position: relative;
+      margin-bottom: 30px;
+
+      a {
+        color: #fff;
+
+        @include hoverLightBackground;
+
+        svg {
+          height: 50px;
+          width: 50px;
+        }
+
+        svg:nth-child(1){
+          margin-right: 80px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .introContainer {
+      width: 50%;
+      min-width: 300px;
+
+      .socialsLinks {
+        position: relative;
+        left: 0%;
+
+        svg:nth-child(1){
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vw 0 0 0;
+    min-height: fit-content;
+    height: 100vh;
+
+    .cardWrapper {
+      width: 100%;
+      margin-top: 5vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .cardShow {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 400px;
+        min-width: 300px;
+        width: 30%;
+        background-color: white;
+        border: 2px solid lightgrey;
+        border-radius: 15%;
+        padding: 0 20px;
+        transition: all .2s ease-in-out;
+
+        &:hover img{
+          display: none;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+
+          .briefDescription {
+            display: block;
+          }
+          &:hover {
+            border: 5px solid #90DD93;
+          }
+        }
+
+        ul {
+          display: flex;
+          justify-content: space-evenly;
+          padding: 0;
+
+          li {
+            list-style: none;
+            font-family: Catamaran;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 2px solid #90DD93;
+            padding: 3px 8px;
+            border-radius: 3px;
+          }
+        }
+
+        .cardImage {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          border-radius: 9%;
+        }
+
+        .briefDescription {
+          padding: 0 10px;
+          border-radius: 15px;
+
+          .cardLinks{
+
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .cardLink {
+              color: #000;
+              font-size: 3rem;
+
+              @include hoverLiveLink;
+            }
+
+            .liveLink {
+              @include hoverLiveLink;
+              margin: 0;
+
+              .headerThree {
+                padding: 0;
+              }
+            }
+          }
+
+          a {
+            text-decoration: none;
+          }
+
+          .headerThree {
+            text-align: center;
+            font-size: 3rem;
+          }
+
+          p {
+            font-size: 1.4rem;
+            color: black;
+          }
+        }
+      }
+      .Hide {
+        display: none;
+      }
+    }
+  }
+}
+
+
+footer {
+  background-color: teal;
+
+  .headerThree {
+    padding: 0;
+  }
+
+  .footerLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px 0 20px 0;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+
+      @include hoverDarkBackGround;
+
+      svg {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+
+  p {
+    color: #ffffff;
+    font-family: Catamaran;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 0 30px;
+    padding-bottom: 20px;
+  }
+
+}
+
+
+@media only screen and (max-width: 1250px) {
+    .navWrapper {
+      flex-direction: column;
+
+      h3 {
+        margin: 15px 0;
+        font-size: 5rem;
+      }
+
+      ul {
+        margin: 0 0 15px 0;
+
+        li {
+
+          a{
+          font-size: 3rem;
+          }
+        }
+      }
+    }
+
+  main {
+    padding-top: 140px;
+  }
+
+}
+
+@media only screen and (max-width: 720px) {
+  main {
+    justify-content: center;
+
+    .profileImageContainer {
+      .profilePic {
+        border-radius: 30%;
+        margin: 0;
+        object-fit: contain;
+      }
+    }
+
+    .introContainer {
+      min-width: 250px;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 666px) {
+  .navWrapper {
+    flex-direction: row;
+
+    h3 {
+      font-size: 6rem;
+    }
+  }
+
+  nav {
+    .navLinks {
+      display: none;
+    }
+    .burgerButton {
+      display: flex;
+    }
+
+    .dropDownMenu {
+      display: flex;
+    }
+  }
+
+  main {
+    .projects {
+      height: fit-content;
+    }
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  main {
+    .profileImageContainer {
+      .profilePic {
+        border-radius: 30%;
+        margin: 0;
+        object-fit: contain;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+    nav {
+      h3 {
+        margin: 20px 20px 0 0;
+        text-align: center;
+      }
+    }
+
+    main {
+
+      padding-top: 130px;
+      .introContainer {
+        .headerThree {
+        }
+      }
+
+      .projects {
+
+        .cardWrapper {
+          .cardShow {
+            width: 75%;
+          }
+        }
+
+        .cardShow:nth-child(2){
+          margin: 20px 0;
+        }
+      }
+    }
+
+    footer {
+      .footerLinks {
+        padding: 10px 0 0 0;
+      }
+    }
+}
+
+@media only screen and (max-width: 580px) {
+  .navWrapper {
+    flex-direction: row;
+
+    h3 {
+      font-size: 4.5rem;
+    }
+  }
+
+  main {
+    .introContainer {
+      .headerThree {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  footer {
+    .headerThree {
+      font-size: 3rem;
+      padding: 20px 0;
+    }
+  }
+}
+
+
