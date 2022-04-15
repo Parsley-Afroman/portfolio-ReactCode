@@ -13,13 +13,8 @@
   src: url("./Catamaran-VariableFont_wght.ttf") format("truetype");
 }
 
-@mixin hoverDarkBackGround {
-  &:hover {
-    color: #e1d0d6;
-  }
-}
 
-@mixin hoverLightBackground {
+@mixin hoverBackground {
   &:hover {
     color: #9A6375;
   }
@@ -37,7 +32,7 @@
   font-size: 3.5rem;
   font-family: Walk The Moon Halftone;
 
-  @include hoverDarkBackGround;
+  @include hoverBackground;
   }
 
 * {box-sizing: border-box}
@@ -79,7 +74,7 @@ nav {
       font-size: 3rem;
       color: white;
 
-      @include hoverDarkBackGround
+      @include hoverBackground
     }
 
     ul {
@@ -94,7 +89,7 @@ nav {
         }
         a {
           @include navlinks;
-          @include hoverDarkBackGround
+          @include hoverBackground
 
         }
       }
@@ -148,7 +143,7 @@ nav {
     font-size: 5rem;
     color: #ffffff;
 
-    @include  hoverDarkBackGround;
+    @include  hoverBackground;
   }
 
   .Hide {
@@ -198,7 +193,7 @@ main {
       a {
         color: #fff;
 
-        @include hoverLightBackground;
+        @include hoverBackground;
 
         svg {
           height: 50px;
@@ -362,7 +357,7 @@ footer {
       text-decoration: none;
       color: #fff;
 
-      @include hoverDarkBackGround;
+      @include hoverBackground;
 
       svg {
         height: 50px;
