@@ -1,5 +1,5 @@
 import {FaGithub, FaInstagram, FaLinkedin, FaBook} from "react-icons/fa";
-import CV from './SamiDevCVwLiveLinks.pdf'
+import CV from './SamiDevCV.pdf'
 
 function Footer (){
     return (
