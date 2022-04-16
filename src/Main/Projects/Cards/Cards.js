@@ -71,7 +71,7 @@ function Cards (){
                     <ul  className='techStack'>
                         <li>OOP PHP</li>
                         <li>SASS</li>
-                        <li>SQL</li>
+                        <li>MySQL</li>
                     </ul>
                     <p>
                         Designed desktop first, and using a Hydrator entity, and Viewhelper, design pattern we created
