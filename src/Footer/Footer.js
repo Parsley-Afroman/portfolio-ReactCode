@@ -2,6 +2,7 @@ import {FaGithub, FaInstagram, FaLinkedin, FaBook} from "react-icons/fa";
 import CV from './SamiDevCV.pdf'
 
 function Footer (){
+
     return (
         <footer id='footer'>
             <div className='footerLinks'>
